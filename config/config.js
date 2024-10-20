@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const dev= {
     app: {
-        port: process.env.PORT || 4000
+        port: process.env.PORT || "mongodb://localhost:27017/user_management"
     },
     db:{
         url: process.env.DB_URL
@@ -11,5 +11,3 @@ const dev= {
 
 module.exports = dev;
 
-
-// || "mongodb://localhost:27017/user_management"
