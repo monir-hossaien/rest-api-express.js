@@ -15,10 +15,10 @@ app.use(cors());
 
 
 
-// home page route
-app.get('/', (req, res)=>{
-    res.status(200).sendFile(path.join(__dirname, './views/index.html'));
-});
+// // home page route
+// app.get('/', (req, res)=>{
+//     res.status(200).sendFile(path.join(__dirname, './views/index.html'));
+// });
 
 // error routes handling
 app.use((req, res)=>{

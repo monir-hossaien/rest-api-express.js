@@ -7,10 +7,17 @@ const userSchema = new mongoose.Schema({
         required: [true, 'User name must be required'],
         trim: true,
     },
+    image:{
+        type: String,
+        required: [true, 'image must be required'],
+        unique: [true, 'image must be unique'],
+        limits: {
+            fileSize: 2 * 1024 * 1024 // 2MB in bytes
+        }
+    },
     email: {
         type: String,
         required: [true, 'Email is required'],
-        unique: true,
         lowercase: true,
         trim: true,
         match: [
@@ -24,7 +31,7 @@ const userSchema = new mongoose.Schema({
         unique: true,
         trim: true,
         match: [
-            /\d{3}-\d{3}-\d{4}/,
+            /^(?:\+88|88)?(01[3-9]\d{8})$/,
             'Please enter a valid phone number'
         ]
     },
